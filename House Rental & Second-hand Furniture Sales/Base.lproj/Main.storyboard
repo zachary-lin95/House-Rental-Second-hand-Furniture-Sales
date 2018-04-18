@@ -20,7 +20,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fKQ-iB-qx6"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Draw" id="AzJ-z6-aja"/>
+                    <tabBarItem key="tabBarItem" title="Draw" image="draw-unselected" selectedImage="draw" id="AzJ-z6-aja"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rhU-b5-gpv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -36,7 +36,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="cgu-Md-TxV"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Publish" id="k26-tO-Ln2"/>
+                    <tabBarItem key="tabBarItem" title="Publish" image="publish" selectedImage="publish-selected" id="k26-tO-Ln2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TeN-oE-qDq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -52,7 +52,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Xmv-Fu-3aZ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Inbox" id="fO6-8x-byJ"/>
+                    <tabBarItem key="tabBarItem" title="Inbox" image="chat-unselected" selectedImage="chat" id="fO6-8x-byJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ug8-qW-0lj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -68,7 +68,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="jYc-tn-ghx"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="4E5-wA-da2"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="boss-unselected" selectedImage="profile" id="4E5-wA-da2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcl-Sp-DHA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -84,7 +84,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="S6e-lP-Q44"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Explore" image="science" selectedImage="earth-globe" id="27m-wV-uxv"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="explore-unselected" selectedImage="explore-1" id="27m-wV-uxv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yWs-mS-qR5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -112,7 +112,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="earth-globe" width="30" height="30"/>
-        <image name="science" width="30" height="30"/>
+        <image name="boss-unselected" width="30" height="30"/>
+        <image name="chat" width="30" height="30"/>
+        <image name="chat-unselected" width="30" height="30"/>
+        <image name="draw" width="30" height="30"/>
+        <image name="draw-unselected" width="30" height="30"/>
+        <image name="explore-1" width="30" height="30"/>
+        <image name="explore-unselected" width="30" height="30"/>
+        <image name="profile" width="30" height="30"/>
+        <image name="publish" width="30" height="30"/>
+        <image name="publish-selected" width="30" height="30"/>
     </resources>
 </document>
