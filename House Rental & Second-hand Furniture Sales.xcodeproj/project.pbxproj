@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B19B11F20892CE800B41DC2 /* TransitionSegue1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19B11E20892CE800B41DC2 /* TransitionSegue1.swift */; };
+		7B19B1212089319800B41DC2 /* PublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19B1202089319800B41DC2 /* PublishViewController.swift */; };
+		7B19B1232089410600B41DC2 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19B1222089410600B41DC2 /* TabbarViewController.swift */; };
+		7B19B1252089477F00B41DC2 /* PostSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19B1242089477F00B41DC2 /* PostSelectionViewController.swift */; };
 		7BB9A0652087E7DA004ED0DB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB9A0642087E7DA004ED0DB /* ProfileViewController.swift */; };
 		7BB9A0672087F247004ED0DB /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB9A0662087F247004ED0DB /* Property.swift */; };
 		7BDF861E2086C32E00F23CCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDF861D2086C32E00F23CCE /* AppDelegate.swift */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B19B11E20892CE800B41DC2 /* TransitionSegue1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionSegue1.swift; sourceTree = "<group>"; };
+		7B19B1202089319800B41DC2 /* PublishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishViewController.swift; sourceTree = "<group>"; };
+		7B19B1222089410600B41DC2 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		7B19B1242089477F00B41DC2 /* PostSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSelectionViewController.swift; sourceTree = "<group>"; };
 		7BB9A0642087E7DA004ED0DB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7BB9A0662087F247004ED0DB /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		7BDF861A2086C32E00F23CCE /* House Rental & Second-hand Furniture Sales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "House Rental & Second-hand Furniture Sales.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +74,10 @@
 				7BDF86292086C32E00F23CCE /* Info.plist */,
 				7BB9A0642087E7DA004ED0DB /* ProfileViewController.swift */,
 				7BB9A0662087F247004ED0DB /* Property.swift */,
+				7B19B11E20892CE800B41DC2 /* TransitionSegue1.swift */,
+				7B19B1202089319800B41DC2 /* PublishViewController.swift */,
+				7B19B1222089410600B41DC2 /* TabbarViewController.swift */,
+				7B19B1242089477F00B41DC2 /* PostSelectionViewController.swift */,
 			);
 			path = "House Rental & Second-hand Furniture Sales";
 			sourceTree = "<group>";
@@ -144,6 +156,10 @@
 			files = (
 				7BB9A0652087E7DA004ED0DB /* ProfileViewController.swift in Sources */,
 				7BDF86202086C32E00F23CCE /* ViewController.swift in Sources */,
+				7B19B1232089410600B41DC2 /* TabbarViewController.swift in Sources */,
+				7B19B1212089319800B41DC2 /* PublishViewController.swift in Sources */,
+				7B19B11F20892CE800B41DC2 /* TransitionSegue1.swift in Sources */,
+				7B19B1252089477F00B41DC2 /* PostSelectionViewController.swift in Sources */,
 				7BB9A0672087F247004ED0DB /* Property.swift in Sources */,
 				7BDF861E2086C32E00F23CCE /* AppDelegate.swift in Sources */,
 			);
