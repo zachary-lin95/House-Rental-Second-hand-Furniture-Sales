@@ -8,18 +8,35 @@
 
 import Foundation
 import UIKit
-class ProfileViewController: UIViewController,UITableViewDelegate{
+class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
     var user = UserInfo.init(name: "Lin", introduce: "Haha", pic: #imageLiteral(resourceName: "user head image"))
     
+    @IBOutlet weak var UserTableView: UITableView!
     override func viewDidLoad() {
+        UserTableView.delegate = self
+        UserTableView.dataSource = self
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return 1;
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100;
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let cell = UserTableView.dequeueReusableCell(withIdentifier: "UserMainCell") as! UserMainCell
+        cell.UserName.text = user.UserName
+        cell.UserIntroduction.text = user.Introduction
+        cell.UserImage.image = user.pic
+        cell.UserImage.layer.cornerRadius = cell.UserImage.frame.height / 2
+        return cell
+    }
+    
+    
     
 }
 class UserMainCell:UITableViewCell{
