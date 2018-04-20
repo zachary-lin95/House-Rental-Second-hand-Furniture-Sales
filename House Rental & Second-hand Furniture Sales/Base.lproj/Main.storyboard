@@ -45,17 +45,76 @@
         <!--PostSelectionViewController-->
         <scene sceneID="ahE-wL-Ehb">
             <objects>
-                <viewController title="PostSelectionViewController" id="KmC-hT-k3A" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostSelectionViewController" title="PostSelectionViewController" id="KmC-hT-k3A" customClass="PostSelectionViewController" customModule="House_Rental___Second_hand_Furniture_Sales" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7xH-O9-0Mu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6qn-CJ-kiE">
+                                <rect key="frame" x="235" y="430" width="90" height="110.33333333333337"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sofa" translatesAutoresizingMaskIntoConstraints="NO" id="9jf-6F-Q6l">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="sgU-Nv-y6H"/>
+                                            <constraint firstAttribute="width" constant="90" id="xAn-tF-kaM"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Furniture" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bz6-pn-Jkl">
+                                        <rect key="frame" x="0.0" y="90" width="90" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hl-vA-oQy">
+                                <rect key="frame" x="142" y="621" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="btnCanceled:" destination="KmC-hT-k3A" eventType="touchUpInside" id="YEG-Vn-54p"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7ad-QB-X9h">
+                                <rect key="frame" x="50" y="430" width="90" height="110.33333333333337"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cityscape" translatesAutoresizingMaskIntoConstraints="NO" id="OLQ-Ru-oi6">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="68J-iv-Rd7"/>
+                                            <constraint firstAttribute="width" constant="90" id="v1q-OX-rwj"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rental" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qH1-Ow-vPP">
+                                        <rect key="frame" x="0.0" y="90" width="90" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RxM-XF-toi" firstAttribute="bottom" secondItem="7ad-QB-X9h" secondAttribute="bottom" constant="237.66999999999999" id="9nu-cY-9dV"/>
+                            <constraint firstItem="RxM-XF-toi" firstAttribute="trailing" secondItem="6qn-CJ-kiE" secondAttribute="trailing" constant="50" id="ESG-1k-OAc"/>
+                            <constraint firstItem="RxM-XF-toi" firstAttribute="bottom" secondItem="6qn-CJ-kiE" secondAttribute="bottom" constant="237.66999999999999" id="IkP-B5-EWY"/>
+                            <constraint firstItem="7ad-QB-X9h" firstAttribute="leading" secondItem="RxM-XF-toi" secondAttribute="leading" constant="50" id="dP9-mz-qea"/>
+                            <constraint firstItem="7ad-QB-X9h" firstAttribute="top" secondItem="RxM-XF-toi" secondAttribute="top" constant="386" id="iwQ-jg-qFz"/>
+                            <constraint firstItem="6qn-CJ-kiE" firstAttribute="top" secondItem="RxM-XF-toi" secondAttribute="top" constant="386" id="kC9-MX-1N9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="RxM-XF-toi"/>
                     </view>
+                    <connections>
+                        <outlet property="FurnitureStackView" destination="6qn-CJ-kiE" id="1vE-hZ-trM"/>
+                        <outlet property="RentalStackview" destination="7ad-QB-X9h" id="McT-8W-y2J"/>
+                        <outlet property="btnCanceled" destination="2hl-vA-oQy" id="pjb-IG-voG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFI-pP-qNP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1306" y="330"/>
+            <point key="canvasLocation" x="1304.8" y="329.55665024630542"/>
         </scene>
         <!--Inbox-->
         <scene sceneID="afW-f4-3w4">
@@ -258,6 +317,8 @@
         <image name="boss-unselected" width="30" height="30"/>
         <image name="chat" width="30" height="30"/>
         <image name="chat-unselected" width="30" height="30"/>
+        <image name="cityscape" width="170" height="170"/>
+        <image name="close" width="90" height="90"/>
         <image name="draw" width="30" height="30"/>
         <image name="draw-unselected" width="30" height="30"/>
         <image name="explore-1" width="30" height="30"/>
@@ -265,6 +326,7 @@
         <image name="profile" width="30" height="30"/>
         <image name="publish" width="30" height="30"/>
         <image name="publish-selected" width="30" height="30"/>
+        <image name="sofa" width="170" height="170"/>
         <image name="user head image" width="40" height="40"/>
     </resources>
 </document>
