@@ -12,9 +12,11 @@ import UIKit
 class PostSelectionViewController: UIViewController {
     
     @IBOutlet weak var RentalStackview: UIStackView!
+    
     @IBOutlet weak var FurnitureStackView: UIStackView!
     
     @IBOutlet weak var btnCanceled: UIButton!
+    
     @IBAction func btnCanceled(_ sender: Any) {
         let WINDOW_HEIGHT = self.view.frame.height
         let BTN_HEIGHT = self.RentalStackview.frame.height
@@ -25,6 +27,8 @@ class PostSelectionViewController: UIViewController {
             self.FurnitureStackView.frame.origin.y = WINDOW_HEIGHT
         }, completion: nil)
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
