@@ -52,7 +52,6 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
             let cell = UserInfoTableView.dequeueReusableCell(withIdentifier: "UserInfoCell") as! UserInfoCell
                 cell.UserInfoItem.text = self.settingitem[indexPath.row]
             cell.UserInfoImage.image = UIImage(named:"\(String(cell.UserInfoItem.text!))")
-            print("\(String(cell.UserInfoItem.text!))")
                 return cell
         }
 

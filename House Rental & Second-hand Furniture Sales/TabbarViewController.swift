@@ -13,6 +13,8 @@ class TabBarViewController: UITabBarController {
     var rentalBtn: UIStackView!
     var furnitureBtn: UIStackView!
     var cancelBtn: UIButton!
+    var rentalbtn: UIButton!
+    var furniturebtn: UIButton!
     
     var rentalBtnPosY: CGFloat!
     var furnitureBtnPosY: CGFloat!
@@ -37,7 +39,7 @@ class TabBarViewController: UITabBarController {
         modalView.frame = CGRect(x: GRID_WIDTH * 2, y: WINDOW_HEIGHT - TAB_HEIGHT, width: GRID_WIDTH, height: TAB_HEIGHT)
         self.view.addSubview(modalView)
         
-        let postBtn = UIButton()
+        let postBtn = UIButton() //+
         postBtn.frame = CGRect(x: GRID_WIDTH * 2 + (GRID_WIDTH - BTN_WIDTH) / 2, y: WINDOW_HEIGHT - TAB_HEIGHT + MARGIN_Y-39, width: BTN_WIDTH, height: BTN_HEIGHT)
         postBtn.setBackgroundImage(UIImage(named: "add"), for: UIControlState())
         
@@ -52,7 +54,6 @@ class TabBarViewController: UITabBarController {
     @objc func postButtonClicked(_ sender: UIButton) {
         if !flag {
             
-            print(flag)
             let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
             let blurView = UIVisualEffectView(effect: blurEffect)
             blurView.frame.size = CGSize(width: self.view.frame.width, height: self.view.frame.height)
@@ -68,6 +69,8 @@ class TabBarViewController: UITabBarController {
             self.rentalBtn = PSVC.RentalStackview
             self.furnitureBtn = PSVC.FurnitureStackView
             self.cancelBtn = PSVC.btnCanceled
+            self.rentalbtn = PSVC.btnRental
+            self.furniturebtn = PSVC.btnFurniture
             
             self.rentalBtnPosY = PSVC.RentalStackview.frame.origin.y
             self.furnitureBtnPosY = PSVC.FurnitureStackView.frame.origin.y
@@ -80,7 +83,8 @@ class TabBarViewController: UITabBarController {
             self.blurView.alpha = 0
             
             self.cancelBtn!.addTarget(self, action: #selector(TabBarViewController.cancelBtnPressed(_:)), for: .touchUpInside)
-            
+            self.rentalbtn!.addTarget(self, action: #selector(TabBarViewController.rentalbtnPressed(_:)), for: .touchUpInside)
+            self.furniturebtn!.addTarget(self, action: #selector(TabBarViewController.furniturebtnPressed(_:)), for: .touchUpInside)
             self.flag = true
         }
         
@@ -105,7 +109,17 @@ class TabBarViewController: UITabBarController {
         }, completion: nil)
         
     }
-    
+    @objc func rentalbtnPressed(_ sender: UIButton){
+        let AddRental = self.storyboard?.instantiateViewController(withIdentifier: "AddRentalViewController") as! AddRentalViewController
+        AddRental.modalTransitionStyle = .crossDissolve
+        self.present(AddRental, animated: true, completion: nil)
+        
+    }
+    @objc func furniturebtnPressed(_ ender: UIButton){
+        let AddFurniture = self.storyboard?.instantiateViewController(withIdentifier: "AddFurnitureViewController") as! AddFurnitureViewController
+        AddFurniture.modalTransitionStyle = .crossDissolve
+        self.present(AddFurniture, animated: true, completion: nil)
+    }
     @objc func cancelBtnPressed(_ sender: UIButton) {
         
         

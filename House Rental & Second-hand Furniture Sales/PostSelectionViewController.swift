@@ -13,9 +13,14 @@ class PostSelectionViewController: UIViewController {
     
     @IBOutlet weak var RentalStackview: UIStackView!
     
+    @IBOutlet weak var btnFurniture: UIButton!
+    @IBOutlet weak var btnRental: UIButton!
     @IBOutlet weak var FurnitureStackView: UIStackView!
     
     @IBOutlet weak var btnCanceled: UIButton!
+    
+
+
     
     @IBAction func btnCanceled(_ sender: Any) {
         let WINDOW_HEIGHT = self.view.frame.height

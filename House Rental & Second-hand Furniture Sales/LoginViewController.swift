@@ -11,6 +11,9 @@ import UIKit
 
 class LogInViewController: UIViewController{
     
+    @IBAction func btnRegister(_ sender: Any) {
+        
+    }
     @IBOutlet weak var ForgetPassWordbtn: UIButton!
     override func viewDidLoad() {
         
