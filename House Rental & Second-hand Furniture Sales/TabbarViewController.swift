@@ -7,6 +7,10 @@
 //
 
 import UIKit
+var userlist = [UserInfo]()
+var furniture = [Furniture]()
+var rentalroom = [RentalRoom]()
+
 
 class TabBarViewController: UITabBarController {
     
@@ -141,6 +145,8 @@ class TabBarViewController: UITabBarController {
         
     }
     
-    
+    func initList()  {
+        
+    }
     
 }
