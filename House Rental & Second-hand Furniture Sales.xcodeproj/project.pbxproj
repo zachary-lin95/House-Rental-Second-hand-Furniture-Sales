@@ -10,6 +10,7 @@
 		7B194934208E700E00A9753F /* AddRentalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B194933208E700E00A9753F /* AddRentalViewController.swift */; };
 		7B194936208E83F900A9753F /* AddFurnitureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B194935208E83F900A9753F /* AddFurnitureViewController.swift */; };
 		7B194986208E991900A9753F /* ImageSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B194985208E991900A9753F /* ImageSlider.swift */; };
+		7B19498A209242F400A9753F /* Profile-SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B194989209242F400A9753F /* Profile-SearchViewController.swift */; };
 		7B19B11F20892CE800B41DC2 /* TransitionSegue1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19B11E20892CE800B41DC2 /* TransitionSegue1.swift */; };
 		7B19B1212089319800B41DC2 /* PublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19B1202089319800B41DC2 /* PublishViewController.swift */; };
 		7B19B1232089410600B41DC2 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19B1222089410600B41DC2 /* TabbarViewController.swift */; };
@@ -29,6 +30,7 @@
 		7B194933208E700E00A9753F /* AddRentalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRentalViewController.swift; sourceTree = "<group>"; };
 		7B194935208E83F900A9753F /* AddFurnitureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFurnitureViewController.swift; sourceTree = "<group>"; };
 		7B194985208E991900A9753F /* ImageSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSlider.swift; sourceTree = "<group>"; };
+		7B194989209242F400A9753F /* Profile-SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile-SearchViewController.swift"; sourceTree = "<group>"; };
 		7B19B11E20892CE800B41DC2 /* TransitionSegue1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionSegue1.swift; sourceTree = "<group>"; };
 		7B19B1202089319800B41DC2 /* PublishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishViewController.swift; sourceTree = "<group>"; };
 		7B19B1222089410600B41DC2 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				7B194933208E700E00A9753F /* AddRentalViewController.swift */,
 				7B194935208E83F900A9753F /* AddFurnitureViewController.swift */,
 				7B194985208E991900A9753F /* ImageSlider.swift */,
+				7B194989209242F400A9753F /* Profile-SearchViewController.swift */,
 			);
 			path = "House Rental & Second-hand Furniture Sales";
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				7B19B1212089319800B41DC2 /* PublishViewController.swift in Sources */,
 				7B194934208E700E00A9753F /* AddRentalViewController.swift in Sources */,
 				7B19B11F20892CE800B41DC2 /* TransitionSegue1.swift in Sources */,
+				7B19498A209242F400A9753F /* Profile-SearchViewController.swift in Sources */,
 				7B19B1252089477F00B41DC2 /* PostSelectionViewController.swift in Sources */,
 				7BB9A0672087F247004ED0DB /* Property.swift in Sources */,
 				7BDF861E2086C32E00F23CCE /* AppDelegate.swift in Sources */,

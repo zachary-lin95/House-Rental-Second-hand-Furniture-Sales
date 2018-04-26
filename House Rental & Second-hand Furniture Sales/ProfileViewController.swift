@@ -9,9 +9,14 @@
 import Foundation
 import UIKit
 class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
-    var user = UserInfo.init(name: "Lin", introduce: "Haha", pic: #imageLiteral(resourceName: "user head image"))
+    var user = rightnowuser
     var settingitem:[String] = ["published","bought","wanted","setting"]
     
+
+    @IBAction func btnLogout(_ sender: Any) {
+        
+    rightnowuser = UserInfo.init(name: "", introduce: "", pic: #imageLiteral(resourceName: "user head image"), password: "")
+    }
     @IBOutlet weak var UserInfoTableView: UITableView!
     @IBOutlet weak var UserTableView: UITableView!
     override func viewDidLoad() {

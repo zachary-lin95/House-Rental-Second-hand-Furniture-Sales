@@ -8,14 +8,49 @@
 
 import Foundation
 import UIKit
+var rightnowuser = UserInfo.init(name: "", introduce: "", pic: #imageLiteral(resourceName: "lin's image"), password: "")
 
 class LogInViewController: UIViewController{
     
+    @IBOutlet weak var usernametxt: LogInTextField!
+    @IBOutlet weak var passwordtxt: LogInTextField!
+    
     @IBAction func btnRegister(_ sender: Any) {
-        
+        let username = usernametxt.text
+        let password = passwordtxt.text
+        for user in userlist{
+            if user.UserName == username {
+                if user.PassWord == password {
+                  print("1")
+                  rightnowuser = searchuser(username: username!)
+                  performSegue(withIdentifier: "LoginSegue", sender: self)
+                  
+                }else {
+                    print("wrong password")
+                    let alert = UIAlertController(title: "Error", message: " wrong password ", preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "OK", style: .default, handler: {
+                        ACTION in
+                        print("Back to check")
+                    })
+                    alert.addAction(ok)
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }else{
+                print("this user do not exist!")
+                let alert = UIAlertController(title: "Error", message: " this user do not exist! ", preferredStyle: .alert)
+                let ok = UIAlertAction(title: "OK", style: .default, handler: {
+                    ACTION in
+                    print("Back to check")
+                })
+                alert.addAction(ok)
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
     }
     @IBOutlet weak var ForgetPassWordbtn: UIButton!
     override func viewDidLoad() {
+        
+        initList()
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -28,7 +63,49 @@ class LogInViewController: UIViewController{
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as?TabBarViewController{
+            destination
+//            if tableView.indexPathForSelectedRow?.row != nil{
+//                destination.booking = bookinglist[(tableView.indexPathForSelectedRow?.row)!]
+//
+//            }else {
+//
+//                destination.booking = tmpbookingsearchresultlist[(resultcontroller.tableView.indexPathForSelectedRow?.row)!]
+//
+//                resultcontroller.self.dismiss(animated: true, completion: nil)
+//            }
+        }
+    }
 }
+
+func initList()  {
+    let dateformatter = DateFormatter()
+    dateformatter.dateFormat = "MM_dd,yyyy"
+    let Lin = UserInfo.init(name: "Lin", introduce: "HaHa", pic: #imageLiteral(resourceName: "lin's image"), password: "1")
+    userlist.append(Lin)
+    let imagelist :[UIImage] = [#imageLiteral(resourceName: "peterborough1"),#imageLiteral(resourceName: "peterborough2"),#imageLiteral(resourceName: "peterborough3")]
+    
+    let Peterbourough =  RentalRoom.init(owner: "Lin", price: "1000", discription: "Welcome to the room!", imagelist: imagelist, fromdate: dateformatter.date(from: "02_11,2018")!, enddate: dateformatter.date(from: "07_16,2018")!)
+    rentalroomlist.append(Peterbourough)
+    let sofalist :[UIImage] = [#imageLiteral(resourceName: "sofa")]
+    let Sofa = Furniture.init(seller: "Lin", price: "200", discription: "This is a nice sofa!", imagelist: sofalist)
+    furniturelist.append(Sofa)
+    
+}
+func searchuser(username:String) -> UserInfo {
+    var user1 = UserInfo(name: "", introduce: "", pic: #imageLiteral(resourceName: "myApp"), password: "1")
+    
+    for user in userlist{
+        if user.UserName == username{
+            user1 = user
+        }
+        
+    }
+    return user1
+}
+
+
 
 @IBDesignable
 class LogInTextField: UITextField {

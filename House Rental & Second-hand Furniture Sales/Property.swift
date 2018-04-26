@@ -13,16 +13,18 @@ class UserInfo {
     var UserName: String!
     var Introduction :String!
     var pic: UIImage!
+    var PassWord:String!
     
     var rentroomlist:[RentalRoom]!
     var sellfurniturelist:[Furniture]!
     var leaseroomlist:[RentalRoom]!
     var boughtfurniturelist:[Furniture]!
     
-    init(name:String,introduce:String,pic:UIImage){
+    init(name:String,introduce:String,pic:UIImage,password:String){
         self.UserName = name
         self.Introduction = introduce
         self.pic = pic
+        self.PassWord = password
     }
 }
 
@@ -34,6 +36,7 @@ class RentalRoom {
     var price:String!
     var discription:String!
     var imagelist:[UIImage]!
+    var address: String!
     
     init(owner:String, price:String,discription:String,imagelist: [UIImage],fromdate:Date,enddate:Date){
         self.owner = searchowner(ownername: owner)
@@ -63,7 +66,7 @@ class Furniture {
     
 }
 func searchowner(ownername:String) -> UserInfo {
-    var user = UserInfo(name: "", introduce: "", pic: #imageLiteral(resourceName: "myApp"))
+    var user = UserInfo(name: "", introduce: "", pic: #imageLiteral(resourceName: "myApp"), password: "1")
     
     for owner in userlist{
         if owner.UserName == ownername{

@@ -11,8 +11,13 @@ import UIKit
 class ExploreViewController: UIViewController,SliderGalleryControllerDelegate {
     let screenWidth =  UIScreen.main.bounds.size.width
     
-    @IBOutlet weak var searchbar: UITableView!
-
+    @IBOutlet weak var btnsearch: UIButton!
+    @IBAction func btnsearch(_ sender: Any) {
+        let SearchView = self.storyboard?.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+        SearchView.modalTransitionStyle = .crossDissolve
+        self.present(SearchView, animated: true, completion: nil)
+    }
+    
     
     //图片轮播组件
     var sliderGallery : SliderGalleryController!
@@ -21,6 +26,7 @@ class ExploreViewController: UIViewController,SliderGalleryControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        btnsearch.setImage(#imageLiteral(resourceName: "searchbar"), for:.normal)
         //初始化图片轮播组件
         sliderGallery = SliderGalleryController()
         sliderGallery.delegate = self
@@ -70,4 +76,12 @@ class ExploreViewController: UIViewController,SliderGalleryControllerDelegate {
         //self.sliderGallery.view.endEditing(true)
         
     }
+}
+class ExploreTableViewCell:UITableViewCell{
+    @IBOutlet weak var ItemDiscriptionTextFiled: UITextView!
+    @IBOutlet weak var ItemImageCollectionView: UICollectionView!
+    @IBOutlet weak var Price: UILabel!
+    @IBOutlet weak var UserDiscription: UILabel!
+    @IBOutlet weak var UserName: UILabel!
+    @IBOutlet weak var UserImg: UIImageView!
 }

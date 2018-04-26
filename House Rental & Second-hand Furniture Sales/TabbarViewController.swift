@@ -8,8 +8,8 @@
 
 import UIKit
 var userlist = [UserInfo]()
-var furniture = [Furniture]()
-var rentalroom = [RentalRoom]()
+var furniturelist = [Furniture]()
+var rentalroomlist = [RentalRoom]()
 
 
 class TabBarViewController: UITabBarController {
@@ -146,6 +146,19 @@ class TabBarViewController: UITabBarController {
     }
     
     func initList()  {
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "MM_dd,yyyy"
+        let Lin = UserInfo.init(name: "Lin", introduce: "HaHa", pic: #imageLiteral(resourceName: "lin's image"), password: "1")
+        userlist.append(Lin)
+        let imagelist :[UIImage] = [#imageLiteral(resourceName: "peterborough1"),#imageLiteral(resourceName: "peterborough2"),#imageLiteral(resourceName: "peterborough3")]
+
+        let Peterbourough =  RentalRoom.init(owner: "Lin", price: "1000", discription: "Welcome to the room!", imagelist: imagelist, fromdate: dateformatter.date(from: "02_11,2018")!, enddate: dateformatter.date(from: "07_16,2018")!)
+        Lin.rentroomlist.append(Peterbourough)
+        rentalroomlist.append(Peterbourough)
+        let sofalist :[UIImage] = [#imageLiteral(resourceName: "sofa")]
+        let Sofa = Furniture.init(seller: "Lin", price: "200", discription: "This is a nice sofa!", imagelist: sofalist)
+        Lin.sellfurniturelist.append(Sofa)
+        furniturelist.append(Sofa)
         
     }
     
