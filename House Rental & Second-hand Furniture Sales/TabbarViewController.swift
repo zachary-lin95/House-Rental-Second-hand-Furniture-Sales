@@ -155,7 +155,7 @@ class TabBarViewController: UITabBarController {
         let Peterbourough =  RentalRoom.init(owner: "Lin", price: "1000", discription: "Welcome to the room!", imagelist: imagelist, fromdate: dateformatter.date(from: "02_11,2018")!, enddate: dateformatter.date(from: "07_16,2018")!)
         Lin.rentroomlist.append(Peterbourough)
         rentalroomlist.append(Peterbourough)
-        let sofalist :[UIImage] = [#imageLiteral(resourceName: "sofa")]
+        let sofalist :[UIImage] = [#imageLiteral(resourceName: "sofa"),#imageLiteral(resourceName: "setting"),#imageLiteral(resourceName: "user head image"),#imageLiteral(resourceName: "peterborough1"),#imageLiteral(resourceName: "peterborough2"),#imageLiteral(resourceName: "peterborough3")]
         let Sofa = Furniture.init(seller: "Lin", price: "200", discription: "This is a nice sofa!", imagelist: sofalist)
         Lin.sellfurniturelist.append(Sofa)
         furniturelist.append(Sofa)

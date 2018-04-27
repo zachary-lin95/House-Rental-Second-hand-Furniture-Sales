@@ -88,10 +88,12 @@ func initList()  {
     
     let Peterbourough =  RentalRoom.init(owner: "Lin", price: "1000", discription: "Welcome to the room!", imagelist: imagelist, fromdate: dateformatter.date(from: "02_11,2018")!, enddate: dateformatter.date(from: "07_16,2018")!)
     rentalroomlist.append(Peterbourough)
-    let sofalist :[UIImage] = [#imageLiteral(resourceName: "sofa")]
+    let sofalist :[UIImage] = [#imageLiteral(resourceName: "sofa"),#imageLiteral(resourceName: "peterborough3"),#imageLiteral(resourceName: "peterborough2"),#imageLiteral(resourceName: "peterborough1")]
     let Sofa = Furniture.init(seller: "Lin", price: "200", discription: "This is a nice sofa!", imagelist: sofalist)
     furniturelist.append(Sofa)
-    
+    let leopardYinlist : [UIImage] = [#imageLiteral(resourceName: "Wechat")]
+    let leopardYin = Furniture.init(seller: "Lin", price: "0.1", discription: "傻逼殷若华", imagelist: leopardYinlist)
+    furniturelist.append(leopardYin)
 }
 func searchuser(username:String) -> UserInfo {
     var user1 = UserInfo(name: "", introduce: "", pic: #imageLiteral(resourceName: "myApp"), password: "1")

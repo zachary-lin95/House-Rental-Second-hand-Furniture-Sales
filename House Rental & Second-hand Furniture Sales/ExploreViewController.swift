@@ -8,9 +8,16 @@
 
 import Foundation
 import UIKit
-class ExploreViewController: UIViewController,SliderGalleryControllerDelegate {
+class ExploreViewController: UIViewController,SliderGalleryControllerDelegate,UITableViewDelegate,UITableViewDataSource{
+    
+    
     let screenWidth =  UIScreen.main.bounds.size.width
     
+    @IBAction func SwitchAction(_ sender: UISegmentedControl) {
+        p = sender.selectedSegmentIndex
+        exploretableview.reloadData()
+    }
+    @IBOutlet weak var exploretableview: UITableView!
     @IBOutlet weak var btnsearch: UIButton!
     @IBAction func btnsearch(_ sender: Any) {
         let SearchView = self.storyboard?.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
@@ -22,11 +29,18 @@ class ExploreViewController: UIViewController,SliderGalleryControllerDelegate {
     //图片轮播组件
     var sliderGallery : SliderGalleryController!
     
-    
+    var p: Int!
     override func viewDidLoad() {
-        super.viewDidLoad()
         
-        btnsearch.setImage(#imageLiteral(resourceName: "searchbar"), for:.normal)
+        super.viewDidLoad()
+        //segment switch
+        p = 0
+        exploretableview.dataSource = self
+        exploretableview.delegate = self
+//        exploretableview.separatorStyle = .none
+        
+        btnsearch.setImage(#imageLiteral(resourceName: "search"), for:.normal)
+        btnsearch.imageView?.frame = CGRect(x: 67, y: 0, width: 240, height: 30)
         //初始化图片轮播组件
         sliderGallery = SliderGalleryController()
         sliderGallery.delegate = self
@@ -51,7 +65,7 @@ class ExploreViewController: UIViewController,SliderGalleryControllerDelegate {
     
     //图片轮播组件协议方法：获取数据集合
     func galleryDataSource() -> [UIImage] {
-        return [#imageLiteral(resourceName: "myApp"),#imageLiteral(resourceName: "city的副本"),#imageLiteral(resourceName: "cityscape"),#imageLiteral(resourceName: "loginbackground"),#imageLiteral(resourceName: "loginitem")]
+        return [#imageLiteral(resourceName: "explore1"),#imageLiteral(resourceName: "explore2"),#imageLiteral(resourceName: "explore3")]
     }
     
     //点击事件响应
@@ -69,19 +83,92 @@ class ExploreViewController: UIViewController,SliderGalleryControllerDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    // table view
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 300
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(p == 0){
+            return  furniturelist.count
+            
+        }else{
+            return rentalroomlist.count
+        }
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = exploretableview.dequeueReusableCell(withIdentifier: "ExploreTableViewCell") as! ExploreTableViewCell
+        if (p == 0){
+        cell.reloadData(images: furniturelist[indexPath.row].imagelist)
+        print(furniturelist[indexPath.row].imagelist.count)
+        cell.ItemDiscriptionTextFiled.text = furniturelist[indexPath.row].discription
+        cell.Price.text = furniturelist[indexPath.row].price
+        cell.UserName.text = furniturelist[indexPath.row].seller.UserName
+        cell.UserImg.image = furniturelist[indexPath.row].seller.pic
+        cell.UserDiscription.text = furniturelist[indexPath.row].seller.Introduction
+        }else{
+            cell.reloadData(images: rentalroomlist[indexPath.row].imagelist)
+            print(rentalroomlist[indexPath.row].imagelist.count)
+            cell.ItemDiscriptionTextFiled.text = rentalroomlist[indexPath.row].discription
+            cell.Price.text = rentalroomlist[indexPath.row].price
+            cell.UserName.text = rentalroomlist[indexPath.row].owner.UserName
+            cell.UserImg.image = rentalroomlist[indexPath.row].owner.pic
+            cell.UserDiscription.text = rentalroomlist[indexPath.row].owner.Introduction
+        }
+        
+        return cell
+    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let selectedindex = indexPath.row
+//        performSegue(withIdentifier: "     ", sender: self)
+//    }
+    
+//    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let destination = segue.destination as?CustomerDetails{
+//            destination.customer = customerlist[(tableView.indexPathForSelectedRow?.row)!]
+//        }
+//    }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
-        //self.itemtableview.endEditing(true)
-        //self.sliderGallery.view.endEditing(true)
         
     }
 }
-class ExploreTableViewCell:UITableViewCell{
+class ExploreTableViewCell: UITableViewCell, UICollectionViewDataSource,UICollectionViewDelegate{
+    var images: [UIImage] = []
     @IBOutlet weak var ItemDiscriptionTextFiled: UITextView!
-    @IBOutlet weak var ItemImageCollectionView: UICollectionView!
+    @IBOutlet weak var ItemImageCollectionView: UICollectionView!{
+        didSet{
+            ItemImageCollectionView.delegate = self
+            ItemImageCollectionView.dataSource = self
+        }
+    }
     @IBOutlet weak var Price: UILabel!
     @IBOutlet weak var UserDiscription: UILabel!
     @IBOutlet weak var UserName: UILabel!
     @IBOutlet weak var UserImg: UIImageView!
+    func reloadData(images:[UIImage]) {
+        self.images = images
+        self.ItemImageCollectionView.reloadData()
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return images.count
+        print(images.count)
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExploreTableViewCellCollectionView", for: indexPath) as! ExploreTableViewCellCollectionView
+        cell.ItemImage.image = images[indexPath.item]
+        return cell
+    }
+}
+
+
+class ExploreTableViewCellCollectionView : UICollectionViewCell{
+    @IBOutlet weak var ItemImage: UIImageView!
+    var image: UIImage! {
+        didSet{
+             self.ItemImage.image = image
+            self.setNeedsLayout()
+        }
+    }
 }

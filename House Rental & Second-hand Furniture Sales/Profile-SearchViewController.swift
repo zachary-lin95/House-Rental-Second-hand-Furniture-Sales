@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 class SearchViewController:UIViewController{
+    
+    @IBAction func btncancel(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         
         
