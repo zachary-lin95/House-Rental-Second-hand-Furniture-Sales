@@ -86,13 +86,13 @@ func initList()  {
     userlist.append(Lin)
     let imagelist :[UIImage] = [#imageLiteral(resourceName: "peterborough1"),#imageLiteral(resourceName: "peterborough2"),#imageLiteral(resourceName: "peterborough3")]
     
-    let Peterbourough =  RentalRoom.init(owner: "Lin", price: "1000", discription: "Welcome to the room!", imagelist: imagelist, fromdate: dateformatter.date(from: "02_11,2018")!, enddate: dateformatter.date(from: "07_16,2018")!)
+    let Peterbourough =  RentalRoom.init(owner: "Lin", price: "1000", discription: "Welcome to the room!", imagelist: imagelist, fromdate: dateformatter.date(from: "02_11,2018")!, enddate: dateformatter.date(from: "07_16,2018")!,address: "75 Peterborough St")
     rentalroomlist.append(Peterbourough)
     let sofalist :[UIImage] = [#imageLiteral(resourceName: "sofa"),#imageLiteral(resourceName: "peterborough3"),#imageLiteral(resourceName: "peterborough2"),#imageLiteral(resourceName: "peterborough1")]
-    let Sofa = Furniture.init(seller: "Lin", price: "200", discription: "This is a nice sofa!", imagelist: sofalist)
+    let Sofa = Furniture.init(seller: "Lin", price: "200", discription: "This is a nice sofa!", imagelist: sofalist, name:"sofa")
     furniturelist.append(Sofa)
     let leopardYinlist : [UIImage] = [#imageLiteral(resourceName: "Wechat")]
-    let leopardYin = Furniture.init(seller: "Lin", price: "0.1", discription: "傻逼殷若华", imagelist: leopardYinlist)
+    let leopardYin = Furniture.init(seller: "Lin", price: "0.1", discription: "傻逼殷若华", imagelist: leopardYinlist, name: "leopardyin")
     furniturelist.append(leopardYin)
 }
 func searchuser(username:String) -> UserInfo {

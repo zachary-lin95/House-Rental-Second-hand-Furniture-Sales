@@ -11,12 +11,15 @@
 		7B194936208E83F900A9753F /* AddFurnitureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B194935208E83F900A9753F /* AddFurnitureViewController.swift */; };
 		7B194986208E991900A9753F /* ImageSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B194985208E991900A9753F /* ImageSlider.swift */; };
 		7B19498A209242F400A9753F /* Profile-SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B194989209242F400A9753F /* Profile-SearchViewController.swift */; };
+		7B19498C2093D54A00A9753F /* RoomDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19498B2093D54A00A9753F /* RoomDetail.swift */; };
+		7B19498E209417D400A9753F /* FurnitureDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19498D209417D400A9753F /* FurnitureDetail.swift */; };
 		7B19B11F20892CE800B41DC2 /* TransitionSegue1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19B11E20892CE800B41DC2 /* TransitionSegue1.swift */; };
 		7B19B1212089319800B41DC2 /* PublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19B1202089319800B41DC2 /* PublishViewController.swift */; };
 		7B19B1232089410600B41DC2 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19B1222089410600B41DC2 /* TabbarViewController.swift */; };
 		7B19B1252089477F00B41DC2 /* PostSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19B1242089477F00B41DC2 /* PostSelectionViewController.swift */; };
 		7B19B127208C390400B41DC2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19B126208C390400B41DC2 /* LoginViewController.swift */; };
 		7B19B129208E35AA00B41DC2 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19B128208E35AA00B41DC2 /* ExploreViewController.swift */; };
+		7B4905FD20949040005E52C1 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4905FC20949040005E52C1 /* SearchController.swift */; };
 		7BB9A0652087E7DA004ED0DB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB9A0642087E7DA004ED0DB /* ProfileViewController.swift */; };
 		7BB9A0672087F247004ED0DB /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB9A0662087F247004ED0DB /* Property.swift */; };
 		7BDF861E2086C32E00F23CCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDF861D2086C32E00F23CCE /* AppDelegate.swift */; };
@@ -31,12 +34,15 @@
 		7B194935208E83F900A9753F /* AddFurnitureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFurnitureViewController.swift; sourceTree = "<group>"; };
 		7B194985208E991900A9753F /* ImageSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSlider.swift; sourceTree = "<group>"; };
 		7B194989209242F400A9753F /* Profile-SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile-SearchViewController.swift"; sourceTree = "<group>"; };
+		7B19498B2093D54A00A9753F /* RoomDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetail.swift; sourceTree = "<group>"; };
+		7B19498D209417D400A9753F /* FurnitureDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnitureDetail.swift; sourceTree = "<group>"; };
 		7B19B11E20892CE800B41DC2 /* TransitionSegue1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionSegue1.swift; sourceTree = "<group>"; };
 		7B19B1202089319800B41DC2 /* PublishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishViewController.swift; sourceTree = "<group>"; };
 		7B19B1222089410600B41DC2 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		7B19B1242089477F00B41DC2 /* PostSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSelectionViewController.swift; sourceTree = "<group>"; };
 		7B19B126208C390400B41DC2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7B19B128208E35AA00B41DC2 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		7B4905FC20949040005E52C1 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		7BB9A0642087E7DA004ED0DB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7BB9A0662087F247004ED0DB /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		7BDF861A2086C32E00F23CCE /* House Rental & Second-hand Furniture Sales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "House Rental & Second-hand Furniture Sales.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +102,9 @@
 				7B194935208E83F900A9753F /* AddFurnitureViewController.swift */,
 				7B194985208E991900A9753F /* ImageSlider.swift */,
 				7B194989209242F400A9753F /* Profile-SearchViewController.swift */,
+				7B19498B2093D54A00A9753F /* RoomDetail.swift */,
+				7B19498D209417D400A9753F /* FurnitureDetail.swift */,
+				7B4905FC20949040005E52C1 /* SearchController.swift */,
 			);
 			path = "House Rental & Second-hand Furniture Sales";
 			sourceTree = "<group>";
@@ -172,14 +181,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B19498C2093D54A00A9753F /* RoomDetail.swift in Sources */,
 				7B19B127208C390400B41DC2 /* LoginViewController.swift in Sources */,
 				7BB9A0652087E7DA004ED0DB /* ProfileViewController.swift in Sources */,
 				7B194936208E83F900A9753F /* AddFurnitureViewController.swift in Sources */,
 				7B19B129208E35AA00B41DC2 /* ExploreViewController.swift in Sources */,
 				7BDF86202086C32E00F23CCE /* ViewController.swift in Sources */,
 				7B19B1232089410600B41DC2 /* TabbarViewController.swift in Sources */,
+				7B19498E209417D400A9753F /* FurnitureDetail.swift in Sources */,
 				7B19B1212089319800B41DC2 /* PublishViewController.swift in Sources */,
 				7B194934208E700E00A9753F /* AddRentalViewController.swift in Sources */,
+				7B4905FD20949040005E52C1 /* SearchController.swift in Sources */,
 				7B19B11F20892CE800B41DC2 /* TransitionSegue1.swift in Sources */,
 				7B19498A209242F400A9753F /* Profile-SearchViewController.swift in Sources */,
 				7B19B1252089477F00B41DC2 /* PostSelectionViewController.swift in Sources */,

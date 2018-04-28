@@ -37,7 +37,9 @@ class ExploreViewController: UIViewController,SliderGalleryControllerDelegate,UI
         p = 0
         exploretableview.dataSource = self
         exploretableview.delegate = self
-//        exploretableview.separatorStyle = .none
+        
+        //exploretableview.separatorStyle = .none
+        
         
         btnsearch.setImage(#imageLiteral(resourceName: "search"), for:.normal)
         btnsearch.imageView?.frame = CGRect(x: 67, y: 0, width: 240, height: 30)
@@ -99,16 +101,15 @@ class ExploreViewController: UIViewController,SliderGalleryControllerDelegate,UI
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = exploretableview.dequeueReusableCell(withIdentifier: "ExploreTableViewCell") as! ExploreTableViewCell
         if (p == 0){
-        cell.reloadData(images: furniturelist[indexPath.row].imagelist)
-        print(furniturelist[indexPath.row].imagelist.count)
-        cell.ItemDiscriptionTextFiled.text = furniturelist[indexPath.row].discription
-        cell.Price.text = furniturelist[indexPath.row].price
-        cell.UserName.text = furniturelist[indexPath.row].seller.UserName
-        cell.UserImg.image = furniturelist[indexPath.row].seller.pic
-        cell.UserDiscription.text = furniturelist[indexPath.row].seller.Introduction
+            cell.reloadData(images: furniturelist[indexPath.row].imagelist)
+            cell.ItemDiscriptionTextFiled.text = furniturelist[indexPath.row].discription
+            cell.Price.text = furniturelist[indexPath.row].price
+            cell.UserName.text = furniturelist[indexPath.row].owner.UserName
+            cell.UserImg.image = furniturelist[indexPath.row].owner.pic
+            cell.UserDiscription.text = furniturelist[indexPath.row].owner.Introduction
+            
         }else{
             cell.reloadData(images: rentalroomlist[indexPath.row].imagelist)
-            print(rentalroomlist[indexPath.row].imagelist.count)
             cell.ItemDiscriptionTextFiled.text = rentalroomlist[indexPath.row].discription
             cell.Price.text = rentalroomlist[indexPath.row].price
             cell.UserName.text = rentalroomlist[indexPath.row].owner.UserName
@@ -117,6 +118,30 @@ class ExploreViewController: UIViewController,SliderGalleryControllerDelegate,UI
         }
         
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedindex = indexPath.row
+        if(p == 1){
+        performSegue(withIdentifier: "showroomdetails", sender: self)
+        
+        }else{
+            performSegue(withIdentifier: "showfurnituredetail", sender: self)
+            
+        }
+
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(p == 1){
+        if let destination = segue.destination as? RoomDetail{
+            destination.room = rentalroomlist[(exploretableview.indexPathForSelectedRow?.row)!]
+        }
+        }else{
+            if let destination = segue.destination as? FurnitureDetail{
+                destination.furniture = furniturelist[(exploretableview.indexPathForSelectedRow?.row)!]
+              }
+        
+        }
     }
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        let selectedindex = indexPath.row

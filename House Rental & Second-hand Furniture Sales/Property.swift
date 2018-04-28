@@ -19,12 +19,14 @@ class UserInfo {
     var sellfurniturelist:[Furniture]!
     var leaseroomlist:[RentalRoom]!
     var boughtfurniturelist:[Furniture]!
+    var wantlist:[Any]
     
     init(name:String,introduce:String,pic:UIImage,password:String){
         self.UserName = name
         self.Introduction = introduce
         self.pic = pic
         self.PassWord = password
+        self.wantlist = []
     }
 }
 
@@ -38,29 +40,30 @@ class RentalRoom {
     var imagelist:[UIImage]!
     var address: String!
     
-    init(owner:String, price:String,discription:String,imagelist: [UIImage],fromdate:Date,enddate:Date){
+    init(owner:String, price:String,discription:String,imagelist: [UIImage],fromdate:Date,enddate:Date,address:String){
         self.owner = searchowner(ownername: owner)
         self.price = price
         self.discription = discription
         self.imagelist = imagelist
         self.fromdate = fromdate
         self.enddate = enddate
+        self.address = address
     }
 }
 
 class Furniture {
-    var seller:UserInfo!
-    var buyer:UserInfo!
+    var name:String!
+    var owner:UserInfo!
     var price:String!
     var discription:String!
     var imagelist:[UIImage]!
     
-    init(seller:String,price:String,discription:String,imagelist:[UIImage]) {
-        self.seller = searchowner(ownername: seller)
+    init(seller:String,price:String,discription:String,imagelist:[UIImage],name:String) {
+        self.owner = searchowner(ownername: seller)
         self.price = price
         self.discription = discription
         self.imagelist = imagelist
-        
+        self.name = name
     }
     
     
